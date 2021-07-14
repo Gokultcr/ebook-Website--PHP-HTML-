@@ -1,0 +1,22 @@
+import java.io.*;
+import java.net.*;
+import java.util.*;
+public class FileClient
+  {
+        public static void main(String[]argv)throws Exception
+        {
+                InetAddress Address=InetAddress.getLocalHost();
+                System.out.println("Receiving file from server");
+                Socket s=new Socket(Address,2025);
+                byte[]b =new byte[1000];
+                InputStream in =s.getInputStream();
+                FileOutputStream fos=new FileOutputStream("rainrain.txt");
+                BufferedOutputStream bos=new BufferedOutputStream(fos);
+                int bytes=in.read(b,0,b.length);
+                bos.write(b,0,bytes);
+                System.out.println("file transferred succesfully.pleasecheck your folder for rainrain.txt");
+                bos.close();
+                s.close();
+                }
+                }
+

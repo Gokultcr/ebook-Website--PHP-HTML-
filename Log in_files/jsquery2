@@ -1,0 +1,1 @@
+var _c=new Date();var _d=new Date(_c.getFullYear(),_c.getMonth(),_c.getDate()+3);tbView.disableBar(_d,'0');
